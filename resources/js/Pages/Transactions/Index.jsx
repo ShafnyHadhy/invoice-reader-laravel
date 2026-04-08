@@ -1,5 +1,6 @@
 export default function Index({ transactions }) {
   const items = transactions?.data ?? [];
+  const formatDate = (value) => (value ? String(value).split('T')[0] : '-');
 
   return (
     <div className="min-h-screen bg-gray-50 py-10">
@@ -32,9 +33,9 @@ export default function Index({ transactions }) {
                   items.map((t) => (
                     <tr key={t.id} className="hover:bg-gray-50 transition-colors">
                       <td className="truncate px-6 py-4 text-sm font-medium text-gray-900">{t.vendor || '-'}</td>
-                      <td className="truncate text-center px-6 py-4 text-sm text-gray-700">{t.transaction_type || '-'}</td>
-                      <td className="truncate text-center px-6 py-4 text-sm text-gray-700">{t.category || '-'}</td>
-                      <td className="whitespace-nowrap text-center px-6 py-4 text-sm text-gray-700">{t.transaction_date || '-'}</td>
+                      <td className="truncate px-6 py-4 text-sm text-gray-700">{t.transaction_type || '-'}</td>
+                      <td className="truncate px-6 py-4 text-sm text-gray-700">{t.category || '-'}</td>
+                      <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-700">{formatDate(t.transaction_date)}</td>
                       <td className="whitespace-nowrap text-center px-6 py-4 text-sm text-gray-700">{t.currency || '-'}</td>
                       <td className="whitespace-nowrap px-6 py-4 text-right text-sm font-semibold text-gray-900">
                         {t.total ?? '-'}

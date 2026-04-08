@@ -15,6 +15,7 @@ Invoice Reader is a Laravel application for uploading invoice files, extracting 
 - Laravel
 - Inertia.js
 - React
+- MySQL
 - Tailwind CSS
 - Google Gemini API
 
