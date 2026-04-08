@@ -23,7 +23,7 @@ class GeminiInvoiceExtractor
             throw new RuntimeException('Invoice file not found.');
         }
 
-        if (filesize($absolutePath) > 2 * 1024 * 1024) {
+        if (filesize($absolutePath) > 10 * 1024 * 1024) {
             throw new RuntimeException('File too large. Use a smaller image.');
         }
 

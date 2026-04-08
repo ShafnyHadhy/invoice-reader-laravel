@@ -53,7 +53,7 @@ export default function Create() {
                   onChange={(e) => setData('file', e.target.files[0])}
                   className="block w-full text-sm text-gray-700 file:mr-4 file:rounded-lg file:border-0 file:bg-green-600 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-white hover:file:bg-green-700"
                 />
-                <p className="mt-3 text-xs text-gray-500">Accepted formats: JPG, JPEG, PNG</p>
+                <p className="mt-3 text-xs text-gray-500">Accepted formats: JPG, JPEG, PNG, PDF</p>
               </div>
               {errors.file && <div className="mt-2 text-sm text-red-600">{errors.file}</div>}
             </div>
