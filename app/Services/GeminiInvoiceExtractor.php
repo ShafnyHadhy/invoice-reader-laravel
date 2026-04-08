@@ -24,7 +24,7 @@ class GeminiInvoiceExtractor
         }
 
         if (filesize($absolutePath) > 10 * 1024 * 1024) {
-            throw new RuntimeException('File too large. Use a smaller image.');
+            throw new RuntimeException('File too large. Use a smaller file.');
         }
 
         $mimeType = $invoice->mime_type ?: mime_content_type($absolutePath);
@@ -58,7 +58,7 @@ Rules:
 PROMPT;
 
         $response = Http::withoutVerifying()->post(
-            "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={$apiKey}",
+            "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={$apiKey}",
             [
                 'contents' => [
                     [
